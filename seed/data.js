@@ -6,12 +6,12 @@ let newCharData = characterApiData.map((char) => {
   const charData = {};
 
   charData.charId = char.id;
-  charData.name = char.name;
-  charData.status = char.status;
-  charData.species = char.species;
-  charData.gender = char.gender;
-  charData.origin = char.origin?.name;
-  charData.location = char.location?.name;
+  charData.name = char.name.toLowerCase();
+  charData.status = char.status.toLowerCase();
+  charData.species = char.species.toLowerCase();
+  charData.gender = char.gender.toLowerCase();
+  charData.origin = char.origin.name;
+  charData.location = char.location.name;
   charData.image = char.image;
 
   return charData;

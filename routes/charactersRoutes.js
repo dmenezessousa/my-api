@@ -12,6 +12,8 @@ router.get("/:id", controllers.getCharacter);
 router.get("/char/:charId", controllers.getCharacterByCharID);
 router.post("/", controllers.createCharacter);
 router.put("/:id", controllers.updateCharacter);
+router.put("/char/:id", controllers.updateCharacterByCharID);
 router.delete("/:id", controllers.deleteCharacter);
+router.delete("/char/:id", controllers.deleteCharacterByCharID);
 
 export default router;
