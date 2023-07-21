@@ -1,7 +1,7 @@
-import { Router } from "express"
-import charactersRoutes from "./charactersRoutes.js"
+import { Router } from "express";
+import charactersRoutes from "./charactersRoutes.js";
 
-const router = Router()
+const router = Router();
 
 router.get("/characters", charactersRoutes);
 
