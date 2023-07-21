@@ -15,9 +15,9 @@ export const getCharacters = async (req, res) => {
 
 export const getCharacterByName = async (req, res) => {
   try {
-    const {name} = req.params
-    let getCharacters = await CharactersModel.find({name: name});
-    res.json(getCharacters);
+    const { name } = req.params;
+    let getCharactersByName = await CharactersModel.find({ name: name });
+    res.json(getCharactersByName);
   } catch (err) {
     console.log(err);
     response.status(500).json({ error: err.message });
@@ -26,8 +26,10 @@ export const getCharacterByName = async (req, res) => {
 
 export const getCharacterBySpecies = async (req, res) => {
   try {
-    let getCharacters = await CharactersModel.find();
-    res.json(getCharacters);
+    let getCharactersBySpecies = await CharactersModel.find({
+      species: req.params.species,
+    });
+    res.json(getCharactersBySpecies);
   } catch (err) {
     console.log(err);
     response.status(500).json({ error: err.message });
