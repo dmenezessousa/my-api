@@ -13,6 +13,47 @@ export const getCharacters = async (req, res) => {
   }
 };
 
+export const getCharacterByName = async (req, res) => {
+  try {
+    const {name} = req.params
+    let getCharacters = await CharactersModel.find({name: name});
+    res.json(getCharacters);
+  } catch (err) {
+    console.log(err);
+    response.status(500).json({ error: err.message });
+  }
+};
+
+export const getCharacterBySpecies = async (req, res) => {
+  try {
+    let getCharacters = await CharactersModel.find();
+    res.json(getCharacters);
+  } catch (err) {
+    console.log(err);
+    response.status(500).json({ error: err.message });
+  }
+};
+
+export const getCharacterByGender = async (req, res) => {
+  try {
+    let getCharacters = await CharactersModel.find();
+    res.json(getCharacters);
+  } catch (err) {
+    console.log(err);
+    response.status(500).json({ error: err.message });
+  }
+};
+
+export const getCharacterByCharID = async (req, res) => {
+  try {
+    let getCharacters = await CharactersModel.find();
+    res.json(getCharacters);
+  } catch (err) {
+    console.log(err);
+    response.status(500).json({ error: err.message });
+  }
+};
+
 //Get character by ID
 export const getCharacter = async (req, res) => {
   try {
