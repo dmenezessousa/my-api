@@ -7,7 +7,7 @@ import logger from "morgan";
 import chalk from "chalk";
 
 const app = express();
-const PORT = process.env.DB_URL || 3030;
+const PORT = process.env.PORT || 3030;
 
 //MIDDLEWARE
 app.use(express.json());
