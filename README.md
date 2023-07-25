@@ -79,8 +79,11 @@ There is a total of 826 characters sorted by id.
 
   | key | type | description |
   | --- | ---- | ----------- |
-  | id | number | charId|
-  | name | string | name of the |character |
+  | charId | number | charId of the character|
+  | name | string | name of the the character |
   | status | string | status of the character |
   | species | string | species of the character |
   | gender | string | gender of the character |
+  | origin | string | origin of the character |
+  | location | string | location of the character |
+  | image | string | image of the character |
