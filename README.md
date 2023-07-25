@@ -45,7 +45,7 @@ The API is RESTful and uses the following HTTP methods:
     ![GET](./images/getByCharId.png)
 - [/api/characters/name/Rick Sanchez](https://my-apii-825654ca4ef9.herokuapp.com/api/characters/name/Rick%20Sanchez)
     ![GET](./images/getByName.png)
-- [/api/characters/species/Human](https://my-apii-825654ca4ef9.herokuapp.com/api/characters/species/Human)
+- [/api/characters/species/human](https://my-apii-825654ca4ef9.herokuapp.com/api/characters/species/human)
     ![GET](./images/getBySpecies.png)
 
 ### POST
