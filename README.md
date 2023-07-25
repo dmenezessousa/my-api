@@ -4,6 +4,14 @@
 
  The API is based on the Ricky and Morty API [Here is the original API](https://rickandmortyapi.com/api/character) and allows users to create, read, update and delete characters from the show. The API is fully documented [Here is My Api](https://my-apii-825654ca4ef9.herokuapp.com/api/characters).The API is built using Node.js, Express.js and MongoDB. The API is hosted on Heroku and the database is hosted on MongoDB Atlas.
 
+## Installation
+
+- Clone the repository
+- Run `npm install` to install all dependencies
+- Run `npm start` to start the server
+- Run `npm run dev` to start the server in development mode
+
+
 ## REST
 
 The API is RESTful and uses the following HTTP methods:
