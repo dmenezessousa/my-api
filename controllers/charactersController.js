@@ -1,5 +1,5 @@
 import Characters from "../models/Characters.js";
-import { response } from "express";
+// import { response } from "express";
 
 //Get all characters
 export const getCharacters = async (req, res) => {
@@ -8,7 +8,7 @@ export const getCharacters = async (req, res) => {
     res.json(getCharacters);
   } catch (err) {
     console.log(err);
-    response.status(500).json({ error: err.message });
+    res.status(500).json({ error: err.message });
   }
 };
 
@@ -19,7 +19,7 @@ export const getCharacterByName = async (req, res) => {
     res.json(getCharactersByName);
   } catch (err) {
     console.log(err);
-    response.status(500).json({ error: err.message });
+    res.status(500).json({ error: err.message });
   }
 };
 
@@ -31,7 +31,7 @@ export const getCharacterBySpecies = async (req, res) => {
     res.json(getCharactersBySpecies);
   } catch (err) {
     console.log(err);
-    response.status(500).json({ error: err.message });
+    res.status(500).json({ error: err.message });
   }
 };
 
@@ -43,7 +43,7 @@ export const getCharacterByGender = async (req, res) => {
     res.json(getCharacterByGender);
   } catch (err) {
     console.log(err);
-    response.status(500).json({ error: err.message });
+    res.status(500).json({ error: err.message });
   }
 };
 
@@ -61,34 +61,56 @@ export const getCharacterByCharID = async (req, res) => {
     res.status(404).json({ message: "Character not found" });
   } catch (err) {
     console.log(err);
-    response.status(500).json({ error: err.message });
+    res.status(500).json({ error: err.message });
   }
 };
+
+// export const getCharacter = async (req, res) => {
+//   try {
+//     const { id } = req.params;
+//     const getCharacterById = await Characters.findById(id);
+
+//     if (getCharacterById) {
+//       return res.json(getCharacterById);
+//     }
+
+//     res.status(404).json({ message: "Character not found" });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json({ error: err.message });
+//   }
+// };
 
 export const getCharacter = async (req, res) => {
   try {
     const { id } = req.params;
-    const getCharacterById = await Characters.findById(id);
 
-    if (getCharacterById) {
-      return res.json(getCharacterById);
+    try {
+      const getCharacterById = await Characters.findById(id);
+
+      if (getCharacterById) {
+        return res.json(getCharacterById);
+      }
+
+      res.status(404).json({ message: "Character not found this time." });
+    } catch (error) {
+      res.status(404).json({ message: "Character not found" });
     }
-
-    res.status(404).json({ message: "Character not found" });
   } catch (err) {
     console.log(err);
-    response.status(500).json({ error: err.message });
+    res.status(500).json({ error: err.message });
   }
 };
+
 
 //Create a new Character
 export const createCharacter = async (req, res) => {
   try {
-    const createNewCharacter = await  Characters.create(req.body);
+    const createNewCharacter = await Characters.create(req.body);
     res.status(201).json(createNewCharacter);
   } catch (err) {
     console.log(err);
-    response.status(500).json({ error: err.message });
+    res.status(500).json({ error: err.message });
   }
 };
 
@@ -100,7 +122,7 @@ export const updateCharacter = async (req, res) => {
     res.status(201).json(updatedCharacter);
   } catch (err) {
     console.log(err);
-    response.status(500).json({ error: err.message });
+    res.status(500).json({ error: err.message });
   }
 };
 
@@ -114,7 +136,7 @@ export const updateCharacterByCharID = async (req, res) => {
     res.status(201).json(updateCharacterByCharId);
   } catch (err) {
     console.log(err);
-    response.status(500).json({ error: err.message });
+    res.status(500).json({ error: err.message });
   }
 };
 
@@ -129,7 +151,7 @@ export const deleteCharacter = async (req, res) => {
   try {
   } catch (err) {
     console.log(err);
-    response.status(500).json({ error: err.message });
+    res.status(500).json({ error: err.message });
   }
 };
 
@@ -143,6 +165,6 @@ export const deleteCharacterByCharID = async (req, res) => {
   try {
   } catch (err) {
     console.log(err);
-    response.status(500).json({ error: err.message });
+    res.status(500).json({ error: err.message });
   }
 };

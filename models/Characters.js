@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import connection from '../db/connection.js'
 const Schema = mongoose.Schema;
 
 let CharactersSchema = new Schema(
@@ -10,10 +9,12 @@ let CharactersSchema = new Schema(
     species: { type: String, trim: true },
     gender: { type: String, trim: true },
     origin: {
-      type: String, trim: true ,
+      type: String,
+      trim: true,
     },
     location: {
-      type: String, trim: true ,
+      type: String,
+      trim: true,
     },
     image: { type: String, trim: true },
   },
